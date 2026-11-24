@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1F63C6">
+<meta name="description" content="MyWeather: weather updates, emergency alerts and sea conditions in one place.">
 <title>MyWeather</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
@@ -7,12 +14,12 @@
 [hidden]{display:none!important}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
-body{margin:0;background:#DCE6F5;color:var(--navy);font-family:var(--font);font-size:14px;overflow:hidden}
+body{margin:0;display:flex;align-items:center;justify-content:center;background:#DCE6F5;color:var(--navy);font-family:var(--font);font-size:14px;overflow:hidden}
 button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
 input{font:inherit;color:inherit}
 svg{display:block}
 #app{position:relative;width:100%;max-width:430px;height:100%;margin:0 auto;background:var(--bg);overflow:hidden}
-@media(min-width:520px){#app{height:min(900px,100%);margin-top:max(0px,calc((100% - 900px)/2));border-radius:34px;box-shadow:0 30px 80px rgba(15,35,71,.28),0 0 0 8px #EDEFF3,0 0 0 9px #C9CED8}}
+@media(min-width:520px) and (min-height:600px){#app{height:min(900px,calc(100% - 40px));border-radius:34px;box-shadow:0 30px 80px rgba(15,35,71,.28),0 0 0 8px #EDEFF3,0 0 0 9px #C9CED8}}
 .screen{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg)}
 .scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 20px 112px;scrollbar-width:none}
 .scroll::-webkit-scrollbar{display:none}
@@ -223,7 +230,8 @@ h3{font-size:18px;font-weight:700;margin:22px 0 12px}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-
+</head>
+<body>
 <div id="app">
   <section id="splash" class="screen">
     <div class="sun"></div><div class="cloudg"></div>
@@ -554,3 +562,5 @@ window.addEventListener('resize',function(){if(S.screen==='sea'&&S.seaView==='ma
 setTimeout(function(){var l=$('#login');l.hidden=false;l.classList.add('fade');$('#splash').classList.add('out');setTimeout(function(){$('#splash').hidden=true},500)},2700);
 })();
 </script>
+</body>
+</html>
